@@ -263,69 +263,69 @@ export type MapContextEvent = {
 
 export type MapEvent =
     /**
-     * Fired when a pointing device (usually a mouse) is pressed within the map.
+     * 在地图内按下一个点击设备(通常是鼠标)时触发。
      *
      * @event mousedown
      * @memberof Map
      * @instance
      * @property {MapMouseEvent} data
-     * @see [Highlight features within a bounding box](https://www.mapbox.com/mapbox-gl-js/example/using-box-queryrenderedfeatures/)
-     * @see [Create a draggable point](https://www.mapbox.com/mapbox-gl-js/example/drag-a-point/)
+     * @see [高亮显示边框内的features要素](https://www.mapbox.com/mapbox-gl-js/example/using-box-queryrenderedfeatures/)
+     * @see [创建一个可拖拽的点](https://www.mapbox.com/mapbox-gl-js/example/drag-a-point/)
      */
     | 'mousedown'
 
     /**
-     * Fired when a pointing device (usually a mouse) is released within the map.
+     * 在地图中松开一个点击设备(通常是鼠标)时被触发。
      *
      * @event mouseup
      * @memberof Map
      * @instance
      * @property {MapMouseEvent} data
-     * @see [Highlight features within a bounding box](https://www.mapbox.com/mapbox-gl-js/example/using-box-queryrenderedfeatures/)
-     * @see [Create a draggable point](https://www.mapbox.com/mapbox-gl-js/example/drag-a-point/)
+     * @see [高亮显示边框内的features要素](https://www.mapbox.com/mapbox-gl-js/example/using-box-queryrenderedfeatures/)
+     * @see [创建一个可拖拽的点](https://www.mapbox.com/mapbox-gl-js/example/drag-a-point/)
      */
     | 'mouseup'
 
     /**
-     * Fired when a pointing device (usually a mouse) is moved within the map.
+     * 当一个指点设备(通常是鼠标)移动覆盖到元素上时被触发。
      *
      * @event mouseover
      * @memberof Map
      * @instance
      * @property {MapMouseEvent} data
-     * @see [Get coordinates of the mouse pointer](https://www.mapbox.com/mapbox-gl-js/example/mouse-position/)
-     * @see [Highlight features under the mouse pointer](https://www.mapbox.com/mapbox-gl-js/example/hover-styles/)
-     * @see [Display a popup on hover](https://www.mapbox.com/mapbox-gl-js/example/popup-on-hover/)
+     * @see [获取鼠标指针的坐标](https://www.mapbox.com/mapbox-gl-js/example/mouse-position/)
+     * @see [高亮显示鼠标覆盖的features区域](https://www.mapbox.com/mapbox-gl-js/example/hover-styles/)
+     * @see [鼠标覆盖上后弹出一个popup框](https://www.mapbox.com/mapbox-gl-js/example/popup-on-hover/)
      */
     | 'mouseover'
 
     /**
-     * Fired when a pointing device (usually a mouse) is moved within the map.
+     * 当一个指点设备（通常是鼠标）移动的时候被触发。
      *
      * @event mousemove
      * @memberof Map
      * @instance
      * @property {MapMouseEvent} data
-     * @see [Get coordinates of the mouse pointer](https://www.mapbox.com/mapbox-gl-js/example/mouse-position/)
-     * @see [Highlight features under the mouse pointer](https://www.mapbox.com/mapbox-gl-js/example/hover-styles/)
-     * @see [Display a popup on over](https://www.mapbox.com/mapbox-gl-js/example/popup-on-hover/)
+     * @see [获取鼠标指针的坐标](https://www.mapbox.com/mapbox-gl-js/example/mouse-position/)
+     * @see [高亮显示鼠标覆盖的features区域](https://www.mapbox.com/mapbox-gl-js/example/hover-styles/)
+     * @see [鼠标覆盖上后弹出一个popup框](https://www.mapbox.com/mapbox-gl-js/example/popup-on-hover/)
      */
     | 'mousemove'
 
     /**
-     * Fired when a pointing device (usually a mouse) is pressed and released at the same point on the map.
+     * 当指点设备（通常是鼠标）在地图上点击时触发。
      *
      * @event click
      * @memberof Map
      * @instance
      * @property {MapMouseEvent} data
-     * @see [Measure distances](https://www.mapbox.com/mapbox-gl-js/example/measure/)
-     * @see [Center the map on a clicked symbol](https://www.mapbox.com/mapbox-gl-js/example/center-on-symbol/)
+     * @see [测量距离](https://www.mapbox.com/mapbox-gl-js/example/measure/)
+     * @see [点击一个符号让其位于地图视图中央](https://www.mapbox.com/mapbox-gl-js/example/center-on-symbol/)
      */
     | 'click'
 
     /**
-     * Fired when a pointing device (usually a mouse) is clicked twice at the same point on the map.
+     * 当一个指点设备（通常是鼠标）双击时触发
      *
      * @event dblclick
      * @memberof Map
@@ -335,10 +335,9 @@ export type MapEvent =
     | 'dblclick'
 
     /**
-     * Fired when a pointing device (usually a mouse) enters a visible portion of a specified layer from
-     * outside that layer or outside the map canvas. This event can only be listened for via the three-argument
-     * version of {@link Map#on}, where the second argument specifies the desired layer.
-     *
+     * 当指点设备（通常是鼠标）从该图层外部或地图画布外部进入指定图层的可见部分时触发。 
+     * 此事件只能通过Map#on的三参数版本的时候进行监听，其中第二个参数为指定所需的图层。
+     * 
      * @event mouseenter
      * @memberof Map
      * @instance
@@ -347,20 +346,20 @@ export type MapEvent =
     | 'mouseenter'
 
     /**
-     * Fired when a pointing device (usually a mouse) leaves a visible portion of a specified layer, or leaves
-     * the map canvas. This event can only be listened for via the three-argument version of {@link Map#on},
-     * where the second argument specifies the desired layer.
-     *
+     * 
+     * 当指点设备（通常是鼠标）离开指定图层的可见部分或离开地图画布时触发。 
+     * 此事件只能通过Map#on的三参数版本时进行监听，其中第二个参数指定所需的图层。 
+     * 
      * @event mouseleave
      * @memberof Map
      * @instance
      * @property {MapMouseEvent} data
-     * @see [Highlight features under the mouse pointer](https://www.mapbox.com/mapbox-gl-js/example/hover-styles/)
+     * @see [高亮显示鼠标覆盖的features区域](https://www.mapbox.com/mapbox-gl-js/example/hover-styles/)
      */
     | 'mouseleave'
 
     /**
-     * Synonym for `mouseenter`.
+     * 和 `mouseenter`类似.
      *
      * @event mouseover
      * @memberof Map
@@ -370,7 +369,7 @@ export type MapEvent =
     | 'mouseover'
 
     /**
-     * Fired when a point device (usually a mouse) leaves the map's canvas.
+     * 当点设备（通常是鼠标）离开地图的画布时触发。
      *
      * @event mouseout
      * @memberof Map
@@ -380,7 +379,7 @@ export type MapEvent =
     | 'mouseout'
 
     /**
-     * Fired when the right button of the mouse is clicked or the context menu key is pressed within the map.
+     * 单击鼠标右键或在地图中按下context menu键时触发。
      *
      * @event contextmenu
      * @memberof Map
@@ -390,7 +389,7 @@ export type MapEvent =
     | 'contextmenu'
 
     /**
-     * Fired when a [`wheel`](https://developer.mozilla.org/en-US/docs/Web/Events/wheel) event occurs within the map.
+     * 当 [`wheel`](https://developer.mozilla.org/en-US/docs/Web/Events/wheel) 事件发生的时候触发.
      *
      * @event wheel
      * @memberof Map
@@ -400,7 +399,7 @@ export type MapEvent =
     | 'wheel'
 
     /**
-     * Fired when a [`touchstart`](https://developer.mozilla.org/en-US/docs/Web/Events/touchstart) event occurs within the map.
+     * 当地图中触发了[`touchstart`](https://developer.mozilla.org/en-US/docs/Web/Events/touchstart)事件时触发 .
      *
      * @event touchstart
      * @memberof Map
@@ -410,7 +409,7 @@ export type MapEvent =
     | 'touchstart'
 
     /**
-     * Fired when a [`touchend`](https://developer.mozilla.org/en-US/docs/Web/Events/touchend) event occurs within the map.
+     * 在地图中发生[`touchend`](https://developer.mozilla.org/en-US/docs/Web/Events/touchend) 事件时触发.
      *
      * @event touchend
      * @memberof Map
@@ -420,7 +419,7 @@ export type MapEvent =
     | 'touchend'
 
     /**
-     * Fired when a [`touchmove`](https://developer.mozilla.org/en-US/docs/Web/Events/touchmove) event occurs within the map.
+     * 地图中发生[`touchmove`](https://developer.mozilla.org/en-US/docs/Web/Events/touchmove)事件时触发.
      *
      * @event touchmove
      * @memberof Map
@@ -430,7 +429,7 @@ export type MapEvent =
     | 'touchmove'
 
     /**
-     * Fired when a [`touchcancel`](https://developer.mozilla.org/en-US/docs/Web/Events/touchcancel) event occurs within the map.
+     * 当地图中产生[`touchcancel`](https://developer.mozilla.org/en-US/docs/Web/Events/touchcancel)事件时触发.
      *
      * @event touchcancel
      * @memberof Map
@@ -440,9 +439,8 @@ export type MapEvent =
     | 'touchcancel'
 
     /**
-     * Fired just before the map begins a transition from one
-     * view to another, as the result of either user interaction or methods such as {@link Map#jumpTo}.
-     *
+     * 在地图开始从一个视图转换到另一个视图之前，由于用户交互或诸如使用了{@link Map#jumpTo}之类的方法时而被触发。
+     * 
      * @event movestart
      * @memberof Map
      * @instance
@@ -451,8 +449,7 @@ export type MapEvent =
     | 'movestart'
 
     /**
-     * Fired repeatedly during an animated transition from one view to
-     * another, as the result of either user interaction or methods such as {@link Map#flyTo}.
+     * 在从一个视图到另一个视图的动画过渡期间反复触发，作为用户交互或诸如{@link Map#flyTo}之类的方法的结果。
      *
      * @event move
      * @memberof Map
@@ -462,20 +459,19 @@ export type MapEvent =
     | 'move'
 
     /**
-     * Fired just after the map completes a transition from one
-     * view to another, as the result of either user interaction or methods such as {@link Map#jumpTo}.
-     *
+     * 在地图完成从一个视图到另一个视图的转换之后，由于用户交互或诸如{@link Map#jumpTo}之类的方法而被触发。
+     * 
      * @event moveend
      * @memberof Map
      * @instance
      * @property {{originalEvent: DragEvent}} data
-     * @see [Play map locations as a slideshow](https://www.mapbox.com/mapbox-gl-js/example/playback-locations/)
-     * @see [Filter features within map view](https://www.mapbox.com/mapbox-gl-js/example/filter-features-within-map-view/)
+     * @see [以幻灯片形式展示地图位置](https://www.mapbox.com/mapbox-gl-js/example/playback-locations/)
+     * @see [对地图中的features做过滤](https://www.mapbox.com/mapbox-gl-js/example/filter-features-within-map-view/)
      */
     | 'moveend'
 
     /**
-     * Fired when a "drag to pan" interaction starts. See {@link DragPanHandler}.
+     * 当“拖动平移”交互事件开始时触发。请参见{@link DragPanHandler}。
      *
      * @event dragstart
      * @memberof Map
@@ -485,8 +481,8 @@ export type MapEvent =
     | 'dragstart'
 
     /**
-     * Fired repeatedly during a "drag to pan" interaction. See {@link DragPanHandler}.
-     *
+     * 在“拖拽平移”互动期间反复触发。请参见{@link DragPanHandler}。
+     * 
      * @event drag
      * @memberof Map
      * @instance
@@ -495,7 +491,7 @@ export type MapEvent =
     | 'drag'
 
     /**
-     * Fired when a "drag to pan" interaction ends. See {@link DragPanHandler}.
+     * 在“拖拽平移”交互结束时触发。请参见{@link DragPanHandler}.
      *
      * @event dragend
      * @memberof Map
@@ -505,8 +501,7 @@ export type MapEvent =
     | 'dragend'
 
     /**
-     * Fired just before the map begins a transition from one zoom level to another,
-     * as the result of either user interaction or methods such as {@link Map#flyTo}.
+     * 在地图开始从一个缩放级别转换到另一个缩放级别之前，由于用户交互或调用了诸如{@link Map#flyTo}之类的方法而被触发。
      *
      * @event zoomstart
      * @memberof Map
@@ -516,21 +511,19 @@ export type MapEvent =
     | 'zoomstart'
 
     /**
-     * Fired repeatedly during an animated transition from one zoom level to another,
-     * as the result of either user interaction or methods such as {@link Map#flyTo}.
-     *
+     * 在从一个缩放级别到另一个缩放级别的动画过渡期间反复触发，作为用户交互或调用了诸如{@link Map#flyTo}之类的方法的结果。
+     * 
      * @event zoom
      * @memberof Map
      * @instance
      * @property {MapMouseEvent | MapTouchEvent} data
-     * @see [Update a choropleth layer by zoom level](https://www.mapbox.com/mapbox-gl-js/example/updating-choropleth/)
+     * @see [通过缩放级别来更新等值区图层](https://www.mapbox.com/mapbox-gl-js/example/updating-choropleth/)
      */
     | 'zoom'
 
     /**
-     * Fired just after the map completes a transition from one zoom level to another,
-     * as the result of either user interaction or methods such as {@link Map#flyTo}.
-     *
+     * 在地图完成从一个缩放级别到另一个缩放级别的转换之后，由于用户交互或调用诸如{@link Map＃flyTo}之类的方法时被触发。
+     * 
      * @event zoomend
      * @memberof Map
      * @instance
@@ -539,7 +532,7 @@ export type MapEvent =
     | 'zoomend'
 
     /**
-     * Fired when a "drag to rotate" interaction starts. See {@link DragRotateHandler}.
+     * “拖动旋转”交互事件开始时触发。请参照{@link DragRotateHandler}。
      *
      * @event rotatestart
      * @memberof Map
@@ -549,7 +542,7 @@ export type MapEvent =
     | 'rotatestart'
 
     /**
-     * Fired repeatedly during a "drag to rotate" interaction. See {@link DragRotateHandler}.
+     * 在“拖动旋转”交互期间反复触发。请参见{@link DragRotateHandler}。
      *
      * @event rotate
      * @memberof Map
@@ -559,7 +552,7 @@ export type MapEvent =
     | 'rotate'
 
     /**
-     * Fired when a "drag to rotate" interaction ends. See {@link DragRotateHandler}.
+     * 在“拖动旋转”交互结束时触发。请参见{@link DragRotateHandler}。
      *
      * @event rotateend
      * @memberof Map
@@ -569,8 +562,7 @@ export type MapEvent =
     | 'rotateend'
 
     /**
-     * Fired whenever the map's pitch (tilt) begins a change as
-     * the result of either user interaction or methods such as {@link Map#flyTo} .
+     * 由于用户交互或调用了{@link Map#flyTo}等方法导致地图的倾斜程度开始发生变化时触发。
      *
      * @event pitchstart
      * @memberof Map
@@ -580,8 +572,7 @@ export type MapEvent =
     | 'pitchstart'
 
     /**
-     * Fired whenever the map's pitch (tilt) changes as.
-     * the result of either user interaction or methods such as {@link Map#flyTo}.
+     * 由于用户交互或者调用了{@link Map#flyTo}等方法导致地图的倾斜程度改变时触发.
      *
      * @event pitch
      * @memberof Map
@@ -591,9 +582,8 @@ export type MapEvent =
     | 'pitch'
 
     /**
-     * Fired immediately after the map's pitch (tilt) finishes changing as
-     * the result of either user interaction or methods such as {@link Map#flyTo}.
-     *
+     * 在发生用户交互或者调用了{@link Map#flyTo}等方法使地图的倾斜程度改变完成后立即触发。
+     * 
      * @event pitchend
      * @memberof Map
      * @instance
@@ -602,7 +592,7 @@ export type MapEvent =
     | 'pitchend'
 
     /**
-     * Fired when a "box zoom" interaction starts. See {@link BoxZoomHandler}.
+     * "box zoom" 交互开始的时候会触发该事件. 详细可以参考{@link BoxZoomHandler}。
      *
      * @event boxzoomstart
      * @memberof Map
@@ -612,7 +602,7 @@ export type MapEvent =
     | 'boxzoomstart'
 
     /**
-     * Fired when a "box zoom" interaction ends.  See {@link BoxZoomHandler}.
+     * "box zoom" 交互结束的时候会触发该事件. 详细可以参考{@link BoxZoomHandler}。
      *
      * @event boxzoomend
      * @memberof Map
@@ -623,8 +613,8 @@ export type MapEvent =
     | 'boxzoomend'
 
     /**
-     * Fired when the user cancels a "box zoom" interaction, or when the bounding box does not meet the minimum size threshold.
-     * See {@link BoxZoomHandler}.
+     * 当用户取消“box zoom”交互时，或当边界框不满足最小尺寸阈值时触发。详见{@link BoxZoomHandler}。
+     * 
      *
      * @event boxzoomcancel
      * @memberof Map
@@ -634,7 +624,7 @@ export type MapEvent =
     | 'boxzoomcancel'
 
     /**
-     * Fired immediately after the map has been resized.
+     * 在地图调整大小后立即触发.
      *
      * @event resize
      * @memberof Map
@@ -643,7 +633,7 @@ export type MapEvent =
     | 'resize'
 
     /**
-     * Fired when the WebGL context is lost.
+     * 当检测到没有WebGL的上下文环境的时候会触发。
      *
      * @event webglcontextlost
      * @memberof Map
@@ -652,7 +642,7 @@ export type MapEvent =
     | 'webglcontextlost'
 
     /**
-     * Fired when the WebGL context is restored.
+     * 在WebGL上下文环境恢复时触发
      *
      * @event webglcontextrestored
      * @memberof Map
@@ -661,26 +651,25 @@ export type MapEvent =
     | 'webglcontextrestored'
 
     /**
-     * Fired immediately after all necessary resources have been downloaded
-     * and the first visually complete rendering of the map has occurred.
+     * 当必要资源被完全加载后地图被完整的渲染成可视状态后立即触发该事件。
      *
      * @event load
      * @memberof Map
      * @instance
      * @type {Object}
-     * @see [Draw GeoJSON points](https://www.mapbox.com/mapbox-gl-js/example/geojson-markers/)
-     * @see [Add live realtime data](https://www.mapbox.com/mapbox-gl-js/example/live-geojson/)
-     * @see [Animate a point](https://www.mapbox.com/mapbox-gl-js/example/animate-point-along-line/)
+     * @see [使用GeoJson数据绘制点](https://www.mapbox.com/mapbox-gl-js/example/geojson-markers/)
+     * @see [动态添加实时数据](https://www.mapbox.com/mapbox-gl-js/example/live-geojson/)
+     * @see [运动的点](https://www.mapbox.com/mapbox-gl-js/example/animate-point-along-line/)
      */
     | 'load'
 
     /**
-     * Fired whenever the map is drawn to the screen, as the result of
+     * 当地图被绘制到屏幕时触发，像下面这些情况：
      *
-     * - a change to the map's position, zoom, pitch, or bearing
-     * - a change to the map's style
-     * - a change to a GeoJSON source
-     * - the loading of a vector tile, GeoJSON file, glyph, or sprite
+     * - 更改地图的位置，缩放，俯仰或方位
+     * - 改变地图的风格
+     * - 对GeoJSON source的更改
+     * - 加载矢量图块，GeoJSON文件，字形或sprite
      *
      * @event render
      * @memberof Map
@@ -689,7 +678,7 @@ export type MapEvent =
     | 'render'
 
     /**
-     * Fired immediately after the map has been removed with {@link Map.event:remove}.
+     * 在使用{@link Map.event:remove}删除映射后立即触发.
      *
      * @event remove
      * @memberof Map
@@ -698,10 +687,8 @@ export type MapEvent =
     | 'remove'
 
     /**
-     * Fired when an error occurs. This is GL JS's primary error reporting
-     * mechanism. We use an event instead of `throw` to better accommodate
-     * asyncronous operations. If no listeners are bound to the `error` event, the
-     * error will be printed to the console.
+     * 发生错误时触发。这是GL JS的主要错误报告机制。我们使用事件的方式而通过throw来抛出错误，
+     * 这样可以更好地适应异步操作。如果没有绑定到错误事件的侦听器，错误信息将打印到控制台。
      *
      * @event error
      * @memberof Map
@@ -711,8 +698,7 @@ export type MapEvent =
     | 'error'
 
     /**
-     * Fired when any map data loads or changes. See {@link MapDataEvent}
-     * for more information.
+     * 任何地图数据加载或更改时触发。有关更多信息，请参见{@link MapDataEvent}
      *
      * @event data
      * @memberof Map
@@ -722,8 +708,7 @@ export type MapEvent =
     | 'data'
 
     /**
-     * Fired when the map's style loads or changes. See
-     * {@link MapDataEvent} for more information.
+     * 在地图的样式加载或更改时触发。有关更多信息，请参见{@link MapDataEvent}来获取更多信息。
      *
      * @event styledata
      * @memberof Map
@@ -733,8 +718,8 @@ export type MapEvent =
     | 'styledata'
 
     /**
-     * Fired when one of the map's sources loads or changes, including if a tile belonging
-     * to a source loads or changes. See {@link MapDataEvent} for more information.
+     * 在地图的某个源加载或更改时触发，包括属于某个源的切片是否加载或更改。有关更多信息，
+     * 请参见{@link MapDataEvent}。
      *
      * @event sourcedata
      * @memberof Map
@@ -744,9 +729,8 @@ export type MapEvent =
     | 'sourcedata'
 
     /**
-     * Fired when any map data (style, source, tile, etc) begins loading or
-     * changing asyncronously. All `dataloading` events are followed by a `data`
-     * or `error` event. See {@link MapDataEvent} for more information.
+     * 当任何地图数据（样式，源，磁贴等）开始异步加载或更改时触发。所有dataloading事件后触发的
+     * data或error事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
      *
      * @event dataloading
      * @memberof Map
@@ -756,9 +740,8 @@ export type MapEvent =
     | 'dataloading'
 
     /**
-     * Fired when the map's style begins loading or changing asyncronously.
-     * All `styledataloading` events are followed by a `styledata`
-     * or `error` event. See {@link MapDataEvent} for more information.
+     * 当任何地图样式开始加载或异步更改时触发。所有styledataloading事件后触发的
+     * styledata或error事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
      *
      * @event styledataloading
      * @memberof Map
@@ -768,9 +751,9 @@ export type MapEvent =
     | 'styledataloading'
 
     /**
-     * Fired when one of the map's sources begins loading or changing asyncronously.
-     * All `sourcedataloading` events are followed by a `sourcedata` or `error` event.
-     * See {@link MapDataEvent} for more information.
+     * 当地图的某个source开始加载或异步更改时触发。所有sourcedataloading事件触发后
+     * sourcedata或error事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
+     *
      *
      * @event sourcedataloading
      * @memberof Map
