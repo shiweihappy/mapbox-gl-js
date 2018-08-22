@@ -11,12 +11,12 @@ import type LngLat from '../geo/lng_lat';
 import type LngLatBounds from '../geo/lng_lat_bounds';
 
 /**
- * `MapMouseEvent` is the event type for mouse-related map events.
+ * `MapMouseEvent` 是与鼠标相关的地图事件的事件类型。
  * @extends {Object}
  */
 export class MapMouseEvent extends Event {
     /**
-     * The event type.
+     * 事件的类型。
      */
     type: 'mousedown'
         | 'mouseup'
@@ -31,34 +31,35 @@ export class MapMouseEvent extends Event {
         | 'contextmenu';
 
     /**
-     * The `Map` object that fired the event.
+     * 响应事件的 `Map`对象。
      */
     target: Map;
 
     /**
-     * The DOM event which caused the map event.
+     * 触发map事件的DOM事件。
      */
     originalEvent: MouseEvent;
 
     /**
-     * The pixel coordinates of the mouse cursor, relative to the map and measured from the top left corner.
+     * 鼠标光标的像素坐标，该坐标是相对于当前的地图方向从左上角开始测量得到。
      */
     point: Point;
 
     /**
-     * The geographic location on the map of the mouse cursor.
+     * 鼠标光标地图上的地理位置。
+     * 
      */
     lngLat: LngLat;
 
     /**
-     * Prevents subsequent default processing of the event by the map.
+     *  阻止地图响应后续的事件。
      *
-     * Calling this method will prevent the following default map behaviors:
+     * 调用此方法将阻止以下默认映射行为：
      *
-     *   * On `mousedown` events, the behavior of {@link DragPanHandler}
-     *   * On `mousedown` events, the behavior of {@link DragRotateHandler}
-     *   * On `mousedown` events, the behavior of {@link BoxZoomHandler}
-     *   * On `dblclick` events, the behavior of {@link DoubleClickZoomHandler}
+     *   * 在`mousedown`事件触发时的{@link DragPanHandler}行为。
+     *   * 在`mousedown`事件触发时的{@link DragRotateHandler}行为。
+     *   * 在`mousedown`事件触发时的{@link BoxZoomHandler}行为。
+     *   * 在`dblclick`事件触发时的{@link DoubleClickZoomHandler}行为。
      *
      */
     preventDefault() {
@@ -66,7 +67,7 @@ export class MapMouseEvent extends Event {
     }
 
     /**
-     * `true` if `preventDefault` has been called.
+     * 如果 `preventDefault` 方法已经被调用则为`true` 。
      */
     get defaultPrevented(): boolean {
         return this._defaultPrevented;
@@ -87,57 +88,55 @@ export class MapMouseEvent extends Event {
 }
 
 /**
- * `MapTouchEvent` is the event type for touch-related map events.
+ * `MapTouchEvent` 是与触摸相关的地图事件的事件类型。
  * @extends {Object}
  */
 export class MapTouchEvent extends Event {
     /**
-     * The event type.
+     * 事件类型.
      */
     type: 'touchstart'
         | 'touchend'
         | 'touchcancel';
 
     /**
-     * The `Map` object that fired the event.
+     * 响应事件的 `Map`对象。
      */
     target: Map;
 
     /**
-     * The DOM event which caused the map event.
+     * 触发map事件的DOM事件。
      */
     originalEvent: TouchEvent;
 
     /**
-     * The geographic location on the map of the center of the touch event points.
+     * 触摸事件中心地图上的地理位置指向。
      */
     lngLat: LngLat;
 
     /**
-     * The pixel coordinates of the center of the touch event points, relative to the map and measured from the top left
-     * corner.
+     * 触摸事件中心位置的坐标，该坐标是相对于当前的地图方向从左上角开始测量得到。
      */
     point: Point;
 
     /**
-     * The array of pixel coordinates corresponding to a
-     * [touch event's `touches`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches) property.
+     * 与触摸事件[touch event's `touches`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches)的触摸属性对应的像素坐标阵列。
      */
     points: Array<Point>;
 
     /**
-     * The geographical locations on the map corresponding to a
-     * [touch event's `touches`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches) property.
+     * 与触摸事件[touch event's `touches`](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches)的触摸属性对应的地理坐标阵列。
+     * 
      */
     lngLats: Array<LngLat>;
 
     /**
-     * Prevents subsequent default processing of the event by the map.
+     * 阻止地图响应后续的事件。
      *
-     * Calling this method will prevent the following default map behaviors:
+     * 调用此方法将阻止以下默认映射行为：
      *
-     *   * On `touchstart` events, the behavior of {@link DragPanHandler}
-     *   * On `touchstart` events, the behavior of {@link TouchZoomRotateHandler}
+     *   * 在 `mousedown` 事件发生时, {@link DragPanHandler}行为
+     *   * 在 `mousedown` 事件发生时, {@link DragRotateHandler}行为
      *
      */
     preventDefault() {
@@ -145,7 +144,7 @@ export class MapTouchEvent extends Event {
     }
 
     /**
-     * `true` if `preventDefault` has been called.
+     * 如果`preventDefault`被调用后将为true。
      */
     get defaultPrevented(): boolean {
         return this._defaultPrevented;
@@ -170,36 +169,36 @@ export class MapTouchEvent extends Event {
 
 
 /**
- * `MapWheelEvent` is the event type for the `wheel` map event.
+ * `MapWheelEvent` 是在地图上产生`wheel`事件所导致的事件.
  * @extends {Object}
  */
 export class MapWheelEvent extends Event {
     /**
-     * The event type.
+     * 事件类型。
      */
     type: 'wheel';
 
     /**
-     * The `Map` object that fired the event.
+     * 响应事件的地图对象
      */
     target: Map;
 
     /**
-     * The DOM event which caused the map event.
+     * 触发map事件的DOM事件。
      */
     originalEvent: WheelEvent;
 
     /**
-     * Prevents subsequent default processing of the event by the map.
+     * 阻止地图响应后续的事件。
      *
-     * Calling this method will prevent the the behavior of {@link ScrollZoomHandler}.
+     * 调用此方法将阻止{@link ScrollZoomHandler}行为.
      */
     preventDefault() {
         this._defaultPrevented = true;
     }
 
     /**
-     * `true` if `preventDefault` has been called.
+     * 如果调用了`preventDefault`方法将会被置为true.
      */
     get defaultPrevented(): boolean {
         return this._defaultPrevented;
@@ -219,8 +218,8 @@ export class MapWheelEvent extends Event {
 /**
  * @typedef {Object} MapBoxZoomEvent
  * @property {MouseEvent} originalEvent
- * @property {LngLatBounds} boxZoomBounds The bounding box of the "box zoom" interaction.
- *   This property is only provided for `boxzoomend` events.
+ * @property {LngLatBounds} boxZoomBounds "box zoom"交互的范围.
+ *   该属性只适用于`boxzoomend`事件.
  */
 export type MapBoxZoomEvent = {
     type: 'boxzoomstart'
@@ -232,18 +231,17 @@ export type MapBoxZoomEvent = {
 };
 
 /**
- * A `MapDataEvent` object is emitted with the {@link Map.event:data}
- * and {@link Map.event:dataloading} events. Possible values for
- * `dataType`s are:
+ * 当{@link Map.event:data}和{@link Map.event:dataloading}事件产生的`MapDataEvent`事件对象，
+ * `dataType`的值可能是：
  *
- * - `'source'`: The non-tile data associated with any source
- * - `'style'`: The [style](https://www.mapbox.com/mapbox-gl-style-spec/) used by the map
+ * - `'source'`: 与任何source关联的non-tile数据
+ * - `'style'`: 地图使用的 [样式](https://www.mapbox.com/mapbox-gl-style-spec/)。
  *
  * @typedef {Object} MapDataEvent
- * @property {string} type The event type.
- * @property {string} dataType The type of data that has changed. One of `'source'`, `'style'`.
- * @property {boolean} [isSourceLoaded] True if the event has a `dataType` of `source` and the source has no outstanding network requests.
- * @property {Object} [source] The [style spec representation of the source](https://www.mapbox.com/mapbox-gl-style-spec/#sources) if the event has a `dataType` of `source`.
+ * @property {string} 事件类型.
+ * @property {string} 已经被修改的数据类型，可能是`'source'`, `'style'`.
+ * @property {boolean} [isSourceLoaded] 如果事件的`dataType`是`source`类型并且source还未完成网络请求则为true.
+ * @property {Object} [source] 如果事件的datatype是source，那么source需要遵守样式规范[遵守样式规范](https://www.mapbox.com/mapbox-gl-style-spec/#sources) if the event has a `dataType` of `source`.
  * @property {string} [sourceDataType] Included if the event has a `dataType` of `source` and the event signals
  * that internal data has been received or changed. Possible values are `metadata` and `content`.
  * @property {Object} [tile] The tile being loaded or changed, if the event has a `dataType` of `source` and
