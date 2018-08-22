@@ -242,12 +242,10 @@ export type MapBoxZoomEvent = {
  * @property {string} 已经被修改的数据类型，可能是`'source'`, `'style'`.
  * @property {boolean} [isSourceLoaded] 如果事件的`dataType`是`source`类型并且source还未完成网络请求则为true.
  * @property {Object} [source] 如果事件的datatype是source，那么source需要遵守样式规范[遵守样式规范](https://www.mapbox.com/mapbox-gl-style-spec/#sources) if the event has a `dataType` of `source`.
- * @property {string} [sourceDataType] Included if the event has a `dataType` of `source` and the event signals
- * that internal data has been received or changed. Possible values are `metadata` and `content`.
- * @property {Object} [tile] The tile being loaded or changed, if the event has a `dataType` of `source` and
- * the event is related to loading of a tile.
- * @property {Coordinate} [coord] The coordinate of the tile if the event has a `dataType` of `source` and
- * the event is related to loading of a tile.
+ * @property {string} [sourceDataType] 如果事件的datatype是source，并且该事件明确的表明内部数据已经被接收或者被改变，该属性将会被赋值。该值可能是
+ * `metadata`和`content`。
+ * @property {Object} [tile] 这里的切片指的是： 一个加载切片相关的事件，并且该事件的dataType是source，此时正在被加载或者改变的切片。
+ * @property {Coordinate} [coord] 如果一个事件的dataType是source，并且该事件是和加载切片相关的，此时切片的坐标就是coord.
  */
 export type MapDataEvent = {
     type: string,
