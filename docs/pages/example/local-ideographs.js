@@ -1,5 +1,5 @@
 /*---
-title: Use locally generated ideographs
+title: 使用本地生成的象形文字
 description: >-
   中文/日文/韩文（CJK）的象形文字和预组合韩文音节的渲染，需要下载大量字体数据，这会显著地拖慢地图的加载时间。
   通过 `localIdeographFontFamily` 的配置，可以直接使用本地可用的字体而不需要拉取服务器的字体数据，来缩短地图的加载时间。
