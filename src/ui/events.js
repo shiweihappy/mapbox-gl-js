@@ -231,7 +231,7 @@ export type MapBoxZoomEvent = {
 };
 
 /**
- * 当{@link Map.event:data}和{@link Map.event:dataloading}事件产生的`MapDataEvent`事件对象，
+ * `MapDataEvent`事件对象是由{@link Map.event:data}和{@link Map.event:dataloading}事件产生的。
  * `dataType`的值可能是：
  *
  * - `'source'`: 与任何source关联的non-tile数据
