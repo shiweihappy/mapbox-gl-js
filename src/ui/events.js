@@ -198,7 +198,7 @@ export class MapWheelEvent extends Event {
     }
 
     /**
-     * 如果调用了`preventDefault`方法将会被置为true.
+     * 如果调用了`preventDefault`方法将会被置为`true`。
      */
     get defaultPrevented(): boolean {
         return this._defaultPrevented;
