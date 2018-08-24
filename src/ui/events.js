@@ -179,7 +179,7 @@ export class MapWheelEvent extends Event {
     type: 'wheel';
 
     /**
-     * 响应事件的地图对象
+     * 响应`Map`对象的事件
      */
     target: Map;
 
