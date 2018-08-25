@@ -46,7 +46,7 @@ export class MapMouseEvent extends Event {
     point: Point;
 
     /**
-     * 鼠标光标地图上的地理位置。
+     * 鼠标光标在地图上的地理位置。
      * 
      */
     lngLat: LngLat;
@@ -238,8 +238,8 @@ export type MapBoxZoomEvent = {
  * - `'style'`: 地图使用的 [样式](https://www.mapbox.com/mapbox-gl-style-spec/)。
  *
  * @typedef {Object} MapDataEvent
- * @property {string} 事件类型.
- * @property {string} 已经被修改的数据类型，可能是`'source'`, `'style'`.
+ * @property {string} type 事件类型.
+ * @property {string} dataType 已经被修改的数据类型，可能是`'source'`, `'style'`.
  * @property {boolean} [isSourceLoaded] 如果事件的`dataType`是`source`类型并且source还未完成网络请求则为true.
  * @property {Object} [source] 如果事件的datatype是source，那么source需要遵守样式规范[遵守样式规范](https://www.mapbox.com/mapbox-gl-style-spec/#sources) if the event has a `dataType` of `source`.
  * @property {string} [sourceDataType] 如果事件的datatype是source，并且该事件明确的表明内部数据已经被接收或者被改变，该属性将会被赋值。该值可能是
@@ -332,7 +332,7 @@ export type MapEvent =
 
     /**
      * 当指点设备（通常是鼠标）从该图层外部或地图画布外部进入指定图层的可见部分时触发。 
-     * 此事件只能通过Map#on的三参数版本的时候进行监听，其中第二个参数为指定所需的图层。
+     * 此事件只能通过{@link Map#on}的三参数版本的时候进行监听，其中第二个参数为指定所需的图层。
      * 
      * @event mouseenter
      * @memberof Map
@@ -683,7 +683,7 @@ export type MapEvent =
     | 'remove'
 
     /**
-     * 发生错误时触发。这是GL JS的主要错误报告机制。我们使用事件的方式而通过throw来抛出错误，
+     * 发生错误时触发。这是GL JS的主要错误报告机制。我们使用事件的方式而通过`throw`来抛出错误，
      * 这样可以更好地适应异步操作。如果没有绑定到错误事件的侦听器，错误信息将打印到控制台。
      *
      * @event error
@@ -726,7 +726,7 @@ export type MapEvent =
 
     /**
      * 当任何地图数据（样式，源，磁贴等）开始异步加载或更改时触发。所有dataloading事件后触发的
-     * data或error事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
+     * `data`或`error`事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
      *
      * @event dataloading
      * @memberof Map
@@ -737,7 +737,7 @@ export type MapEvent =
 
     /**
      * 当任何地图样式开始加载或异步更改时触发。所有styledataloading事件后触发的
-     * styledata或error事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
+     * `styledata`或`error`事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
      *
      * @event styledataloading
      * @memberof Map
@@ -748,7 +748,7 @@ export type MapEvent =
 
     /**
      * 当地图的某个source开始加载或异步更改时触发。所有sourcedataloading事件触发后
-     * sourcedata或error事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
+     * `sourcedata`或`error`事件发生时会触发。有关更多信息，请参照 {@link MapDataEvent} 。
      *
      *
      * @event sourcedataloading
