@@ -1,10 +1,10 @@
 /*---
-title: Add an image
-description: Dark vector baselayer with radar weather image overlay
-tags:
+标题：添加一张纹理图片
+描述：基线矢量暗纹理与天气影像图叠加
+标签：
   - sources
   - layers
-pathname: /mapbox-gl-js/example/image-on-a-map/
+文件路径：/mapbox-gl-js/example/image-on-a-map/
 ---*/
 import Example from '../../components/example';
 import html from './image-on-a-map.html';
