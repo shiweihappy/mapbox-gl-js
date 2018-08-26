@@ -1,5 +1,5 @@
 /*---
-title: 匹配LineString的边界Fit to the bounds of a LineString
+title: 匹配LineString的边界
 description: >-
   通过将第一个坐标传递给
   [`LngLatBounds`](/mapbox-gl-js/api/#lnglatbounds)
