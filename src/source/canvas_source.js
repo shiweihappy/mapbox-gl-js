@@ -21,17 +21,17 @@ export type CanvasSourceSpecification = {|
 |};
 
 /**
- * 添加canvas类型的数据源到地图上的参数说明.
+ * 添加canvas类型的数据源到地图上的参数说明。
  *
  * @typedef {Object} CanvasSourceOptions
- * @property {string} type 数据源类型. 必须是`canvas`类型.
- * @property {string|HTMLCanvasElement} canvas 从中读取像素的 `canvas` 数据源. 可以是一个表示 `canvas` 元素ID的字符串,或者是 `HTMLCanvasElement` 本身.
- * @property {Array<Array<number>>} coordinates 四组表示 `canvas` 范围的坐标对,形式为 `[经度, 纬度]` .
- * @property {boolean} [animate=true] `canvas` 数据源是否开启动画. 如果 `canvas` 是静态的(每一帧所有的像素没有必要重新读取),请把动画选项 `animate` 设置成false,以便提升性能.
+ * @property {string} type 数据源类型。必须是`canvas`类型。
+ * @property {string|HTMLCanvasElement} canvas 从中读取像素的 `canvas` 数据源。可以是一个表示 `canvas` 元素ID的字符串，或者是 `HTMLCanvasElement` 本身。
+ * @property {Array<Array<number>>} coordinates 四组表示 `canvas` 范围的坐标对,形式为 `[经度, 纬度]` 。
+ * @property {boolean} [animate=true] `canvas` 数据源是否开启动画。如果 `canvas` 是静态的(每一帧所有的像素没有必要重新读取)，请把动画选项 `animate` 设置成false，以便提升性能。
  */
 
 /**
- * 包含 `canvas` 的数据源. 请看 {@link CanvasSourceOptions} 更详细的文档描述.
+ * 包含 `canvas` 的数据源。请看 {@link CanvasSourceOptions} 更详细的文档描述。
  *
  * @example
  * // 添加数据到map
