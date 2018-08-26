@@ -15,7 +15,7 @@ type Options = {
  *
  * @implements {IControl}
  * @param {Object} [options]
- * @param {boolean} [options.compact] 若为 `true` 则显示属性缩略图标,鼠标悬浮时显示详细的地图属性信息,若为 `false` 则显示详细的属性信息. 默认地图属性为响应式展示方式:当地图宽度小于640像素时属性收起.收起.
+ * @param {boolean} [options.compact] 若为 `true` 则显示属性缩略图标，鼠标悬浮时显示详细的地图属性信息，若为 `false` 则显示详细的属性信息。默认地图属性为响应式展示方式：当地图宽度小于640像素时属性收起。收起.
  * @example
  * var map = new mapboxgl.Map({attributionControl: false})
  *     .addControl(new mapboxgl.AttributionControl({
