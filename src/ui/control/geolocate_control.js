@@ -55,22 +55,22 @@ function checkGeolocationSupport(callback) {
 }
 
 /**
- * `GeolocateControl` 工具提供一个按钮，该按钮利用浏览器的 geolocation API 在地图上对用户进行定位.
- * 并不是所有的浏览器都支持地理定位,一些用户也有可能禁用了该功能.
- * 地理定位支持包含谷歌在内的现代浏览器,并要求网站支持HTTPS服务. 
- * 若浏览器地理定位功能不可用, GeolocateControl 工具将隐藏.
- * 地理定位提供的地图缩放级别依赖于设备提供的地理定位精度.
- * 地理定位有两种模式. 若 `trackUserLocation` 为 `false` (默认),则定位工具类似于按钮,当按下按钮时,地图相机瞄准用户位置. 如果用户移动,地图不会刷新. 这种模式最适合桌面应用. 如果 `trackUserLocation` 为 `true` ,该工具表现为一个切换按钮, 当用户位置激活时，积极监控用户位置变化. 在这种模式下,该地理定位工具有三种状态:
- * * 主动 - 地图相机随着用户位置变化自动更新, 保持用户位置居于地图中心点.
- * * 被动 - 用户定位点自动更新,但地图相机不更新.
+ * `GeolocateControl` 工具提供一个按钮，该按钮利用浏览器的 geolocation API 在地图上对用户进行定位。
+ * 并不是所有的浏览器都支持地理定位，一些用户也有可能禁用了该功能。
+ * 地理定位支持包含谷歌在内的现代浏览器,并要求网站支持HTTPS服务。
+ * 若浏览器地理定位功能不可用，GeolocateControl 工具将隐藏。
+ * 地理定位提供的地图缩放级别依赖于设备提供的地理定位精度。
+ * 地理定位有两种模式。若 `trackUserLocation` 为 `false` (默认)，则定位工具类似于按钮，当按下按钮时，地图相机瞄准用户位置。如果用户移动，地图不会刷新. 这种模式最适合桌面应用。如果 `trackUserLocation` 为 `true` ,该工具表现为一个切换按钮，当用户位置激活，积极监控用户位置变化。在这种模式下，该地理定位工具有三种状态：
+ * * 主动 - 地图相机随着用户位置变化自动更新，保持用户位置居于地图中心点。
+ * * 被动 - 用户定位点自动更，但地图相机不更新。
  * * 禁用
  *
  * @implements {IControl}
  * @param {Object} [options]
- * @param {Object} [options.positionOptions={enableHighAccuracy: false, timeout: 6000}] 一个地理定位 API [位置选项](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions) 对象.
- * @param {Object} [options.fitBoundsOptions={maxZoom: 15}] 当地图拖动并缩放到用户位置时使用该[`fitBounds`](#Map#fitBounds)选项对象. 对于非常精确的位置,默认使用 15 级为地图最大缩放级别.
- * @param {Object} [options.trackUserLocation=false] 如果 `true` 地理定位工具显示为切换按钮, 当激活地图时随着用户位置改变接收位置变化.
- * @param {Object} [options.showUserLocation=true] 默认在地图上显示用户点位. 设置为 false 则不显示.
+ * @param {Object} [options.positionOptions={enableHighAccuracy: false, timeout: 6000}] 一个地理定位 API [位置选项](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions) 对象。
+ * @param {Object} [options.fitBoundsOptions={maxZoom: 15}] 当地图拖动并缩放到用户位置时使用该[`fitBounds`](#Map#fitBounds)选项对象。对于非常精确的位置，默认使用 15 级为地图最大缩放级别。
+ * @param {Object} [options.trackUserLocation=false] 如果 `true` 地理定位工具显示为切换按钮，当激活地图时随着用户位置改变接收位置变化。
+ * @param {Object} [options.showUserLocation=true] 默认在地图上显示用户点位。设置为 false 则不显示。
  *
  * @example
  * map.addControl(new mapboxgl.GeolocateControl({
@@ -301,7 +301,7 @@ class GeolocateControl extends Evented {
     /**
      * 触发地理定位
      *
-     * @returns {boolean} 如果工具调用发生在被添加进地图之前,返回 `false` , 否则返回 `true`.
+     * @returns {boolean} 如果工具调用发生在被添加进地图之前，返回 `false`，否则返回 `true`。
      */
     trigger() {
         if (!this._setup) {
@@ -410,25 +410,25 @@ class GeolocateControl extends Evented {
 export default GeolocateControl;
 
 /* 地理定位工具的观察状态
- * 这是工具的私有状态.
+ * 这是工具的私有状态。
  *
  * OFF
  *    off/inactive
  * WAITING_ACTIVE
- *    地理定位工具被点击,却一直在等待 Geolocation API 对用户位置作出响应.
+ *    地理定位工具被点击，却一直在等待 Geolocation API 对用户位置作出响应。
  * ACTIVE_LOCK
- *    显示用户点位并追踪地图相机固定到定位点. 如果用户位置改变地图跟着移动. 
+ *    显示用户点位并追踪地图相机固定到定位点。如果用户位置改变地图跟着移动。
  * ACTIVE_ERROR
- *    Geolocation API 在尝试显示和追踪用户位置时报错.
+ *    Geolocation API 在尝试显示和追踪用户位置时报错。
  * BACKGROUND
- *    显示了用户点位,但相机并没有跟随用户位置变化.
+ *    显示了用户点位，但相机并没有跟随用户位置变化。
  * BACKGROUND_ERROR
- *    Geolocation API在尝试显示(并不跟踪)用户点位时出错.
+ *    Geolocation API在尝试显示(并不跟踪)用户点位时出错。
  */
 
 
 /**
- * Geolocation API 位置每次更新成功时触发.
+ * Geolocation API 位置每次更新成功时触发。
  *
  * @event geolocate
  * @memberof GeolocateControl
@@ -438,7 +438,7 @@ export default GeolocateControl;
  */
 
 /**
- * Geolocation API位置每次更新出错时触发.
+ * Geolocation API位置每次更新出错时触发。
  *
  * @event error
  * @memberof GeolocateControl
@@ -448,8 +448,8 @@ export default GeolocateControl;
  */
 
 /**
- * 当地理定位工具状态变为 ACTIVE_LOCK 时触发.
- * 触发情况有两种:第一次成功获取到用户的 Geolocation API 定位时触发 (地理定位事件随后触发),或者用户在 background 状态(该状态是使用最近一次可知的位置居中地图并进入active lock状态)点击地理定位按钮时触发. (除非用户位置改变,否则不触发地理定位事件).
+ * 当地理定位工具状态变为 ACTIVE_LOCK 时触发。
+ * 触发情况有两种：第一次成功获取到用户的 Geolocation API 定位时触发 (地理定位事件随后触发)，或者用户在 background 状态(该状态是使用最近一次可知的位置居中地图并进入active lock状态)点击地理定位按钮时触发。(除非用户位置改变，否则不触发地理定位事件)。
  * @event trackuserlocationstart
  * @memberof GeolocateControl
  * @instance
@@ -457,7 +457,7 @@ export default GeolocateControl;
  */
 
 /**
- * 当地理定位工具状态变为 BACKGROUND 时触发. 当用户在 active lock 状态改变相机时,观察状态会变为 BACKGROUND. 这种观察状态的改变仅当 trackUserLocation 值为 true 时有效. 在 background 状态, 地图上点位会随着位置的变化而更新,但地图相机却不会.
+ * 当地理定位工具状态变为 BACKGROUND 时触发. 当用户在 active lock 状态改变相机时，观察状态会变为 BACKGROUND。这种观察状态的改变仅当 trackUserLocation 值为 true 时有效。在 background 状态，地图上点位会随着位置的变化而更新，但地图相机却不会。
  *
  * @event trackuserlocationend
  * @memberof GeolocateControl
