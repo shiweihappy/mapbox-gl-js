@@ -74,7 +74,7 @@ class CanvasSource extends ImageSource {
     constructor(id: string, options: CanvasSourceSpecification, dispatcher: Dispatcher, eventedParent: Evented) {
         super(id, options, dispatcher, eventedParent);
 
-        // 验证,因为样式规格不包含canvas数据源:
+        // 验证，因为样式规格不包含canvas数据源：
         if (!options.coordinates) {
             this.fire(new ErrorEvent(new ValidationError(`sources.${id}`, null, 'missing required property "coordinates"')));
         } else if (!Array.isArray(options.coordinates) || options.coordinates.length !== 4 ||
@@ -104,7 +104,7 @@ class CanvasSource extends ImageSource {
      */
 
     /**
-     * 关闭动画. 地图上将展示一个静态的canvas图像的拷贝.
+     * 关闭动画。地图上将展示一个静态的canvas图像的拷贝。
      * @method pause
      * @instance
      * @memberof CanvasSource
@@ -137,9 +137,9 @@ class CanvasSource extends ImageSource {
     }
 
     /**
-     * 返回HTML `canvas` 元素.
+     * 返回HTML `canvas` 元素。
      *
-     * @returns {HTMLCanvasElement} HTML `canvas` 元素.
+     * @returns {HTMLCanvasElement} HTML `canvas` 元素。
      */
     getCanvas() {
         return this.canvas;
@@ -163,10 +163,10 @@ class CanvasSource extends ImageSource {
      * @method setCoordinates
      * @instance
      * @memberof CanvasSource
-     * @param {Array<Array<number>>} coordinates 四组地理坐标对构成的集合,
-     *   每一组坐标是由经纬度构成的数组,四组坐标对表示了 `canvas` 的地理空间范围.
-     *   从左上角开始,按照顺时针.
-     *   并不一定是矩形.
+     * @param {Array<Array<number>>} coordinates 四组地理坐标对构成的集合，
+     *   每一组坐标是由经纬度构成的数组，四组坐标对表示了 `canvas` 的地理空间范围。
+     *   从左上角开始,按照顺时针。
+     *   并不一定是矩形。
      * @returns {CanvasSource} this
      */
     // setCoordinates 方法继承于 ImageSource
