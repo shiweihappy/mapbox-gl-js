@@ -1,6 +1,6 @@
 /*---
 title: 使用按钮来改变图层的颜色
-description: 使用[`设置颜色属性`](/mapbox-gl-js/api#map#setpaintproperty)功能来改变一个图层的填充颜色
+description: 使用[`setPaintProperty`](/mapbox-gl-js/api#map#setpaintproperty)功能来改变一个图层的填充颜色
 tags:
   - layers
   - user-interaction
