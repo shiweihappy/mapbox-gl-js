@@ -1815,7 +1815,7 @@ function removeNode(node) {
  *
  * @interface IControl
  * @example
- * // Control implemented as ES6 class
+ * // 使用 ES6 实现的控件
  * class HelloWorldControl {
  *     onAdd(map) {
  *         this._map = map;
@@ -1831,7 +1831,7 @@ function removeNode(node) {
  *     }
  * }
  *
- * // Control implemented as ES5 prototypical class
+ * // 使用 ES5 的原型类型实现控件
  * function HelloWorldControl() { }
  *
  * HelloWorldControl.prototype.onAdd = function(map) {
@@ -1874,7 +1874,7 @@ function removeNode(node) {
 
 /**
  * 为控制器提供一个默认的位置。如果这个方法被继承，同时不包含“position”参数的方法
- * {@link Map#addControl}将会被调用，方法getDefaultPosition返回值将会作为控制器的位置参数。
+ * {@link Map#addControl}将会被调用，方法getDefaultPosition返回值将会作为控制器的位置参数。、
  *
  * @function
  * @memberof IControl
@@ -1887,6 +1887,7 @@ function removeNode(node) {
 /**
  * [点对象](https://github.com/mapbox/point-geometry)，以像素为单位的屏幕x和y坐标。
  * 
+
  * @typedef {Object} Point
  */
 
